@@ -48,6 +48,7 @@ public class SearchController {
         boolQueryBuilder.must(QueryBuilders.matchQuery("status",1));
         QueryBuilders.matchQuery("status", 1).operator(Operator.AND);
         if (StrUtil.isNotBlank(query.getKey())){
+            searchRequest.source().highlighter(SearchSourceBuilder.highlight().field("name"));
             boolQueryBuilder.must(QueryBuilders.matchQuery("name", query.getKey()).operator(Operator.AND));
         }
         if (StrUtil.isNotBlank(query.getBrand())){
@@ -78,6 +79,10 @@ public class SearchController {
         for (SearchHit hit : hits) {
 
             ItemDTO itemDTO = JSONUtil.toBean(hit.getSourceAsString(), ItemDTO.class);
+            if (hit.getHighlightFields().get("name") != null){
+                String name = hit.getHighlightFields().get("name").getFragments()[0].toString();
+                itemDTO.setName(name);
+            }
             list.add(itemDTO);
         }
         res.setPages(Long.valueOf(totalSize / query.getPageSize() + 1)) ;
