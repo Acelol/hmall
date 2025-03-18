@@ -1,0 +1,20 @@
+server:
+  port: 8081
+hm:
+  db:
+    database: hm-item
+  swagger:
+    package: com.hmall.item.controller
+    title: "商城商品接口文档"
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090
+  elasticsearch:
+    uris: http://192.168.138.101:9200

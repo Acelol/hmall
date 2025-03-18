@@ -1,0 +1,23 @@
+server:
+  port: 8082
+  tomcat:
+    threads:
+      max: 50
+    accept-count: 50
+    max-connections: 100
+hm:
+  db:
+    database: hm-cart
+  swagger:
+    package: com.hmall.cart.controller
+    title: "商城购物车接口文档"
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090

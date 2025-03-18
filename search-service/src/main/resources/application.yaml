@@ -1,0 +1,20 @@
+server:
+  port: 8083
+hm:
+  db:
+    database: hm-search
+  swagger:
+    package: com.hmall.search.controller
+    title: "商城搜索接口文档"
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8083
+  elasticsearch:
+    uris: http://192.168.138.101:9200

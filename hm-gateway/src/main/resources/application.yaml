@@ -1,0 +1,49 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: hm-gateway-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 192.168.138.101:8848
+    gateway:
+      routes:
+        - id: hm-item-service
+          uri: lb://hm-item-service
+          predicates:
+            - Path=/items/**
+        - id: hm-user-service
+          uri: lb://hm-user-service
+          predicates:
+              - Path=/addresses/**,/users/**
+        - id: hm-cart-service
+          uri: lb://hm-cart-service
+          predicates:
+              - Path=/carts/**
+        - id: hm-trade-service
+          uri: lb://hm-trade-service
+          predicates:
+              - Path=/orders/**
+        - id: hm-pay-service
+          uri: lb://hm-pay-service
+          predicates:
+              - Path=/pay-orders/**
+        - id: hm-search-service
+          uri: lb://hm-search-service
+          predicates:
+              - Path=/search/**
+      default-filters:
+hm:
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /users/login
+      - /items/**
+      - /hi

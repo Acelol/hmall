@@ -1,0 +1,13 @@
+server:
+  port: 8086
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090
+hm:
+  db:
+    database: hm-pay
+  swagger:
+    package: com.hmall.pay.controller
+    title: "商城支付接口文档"

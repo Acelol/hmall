@@ -1,0 +1,18 @@
+server:
+  port: 8085
+hm:
+  db:
+    database: hm-trade
+  swagger:
+    package: com.hmall.trade.controller
+    title: "商城交易接口文档"
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090

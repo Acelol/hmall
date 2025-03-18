@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: hm-trade-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 192.168.138.101
+      config:
+        file-extension: yaml
+        shared-configs:
+          - data-id: shared-jdbc.yaml
+          - data-id: shared-log.yaml
+          - data-id: shared-knif.yaml
+          - data-id: shared-seata.yaml
+          - data-id: shared-rabbitmq.yaml

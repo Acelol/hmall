@@ -1,0 +1,110 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.last
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+tmp/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Log files
+*.log
+*.gz
+
+# System files
+.DS_Store
+Thumbs.db
+
+# OS generated files
+ehthumbs.db
+Desktop.ini
+
+# Environment variables
+.env
+.env.*
+
+# Compiled class file
+*.class
+
+# Local configuration file (application properties files)
+application-local.properties
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# JAR files
+*.jar
+*.war
+*.ear
+
+# Compiled Java files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IDE-specific files
+*.iml
+*.ipr
+*.iws
+
+# Gradle
+.gradle/
+build/
+gradle.properties
+
+# Lombok
+lombok.config
+
+# Hutool
+hutool-config.properties
+
+# Other
+*.bak
+*.swp
+*.swo
+*.swn
+*.tmp
+*.bak
+*.orig
+*.rej
+*.lock
+*.class

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: hm-gateway-service
+  cloud:
+    nacos:
+      server-addr: 192.168.138.101
